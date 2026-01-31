@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+
+// Font Imports
+import '@fontsource/playfair-display/400.css';
+import '@fontsource/playfair-display/400-italic.css';
+import '@fontsource/playfair-display/700.css';
+import '@fontsource/cormorant-garamond/300.css';
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/600.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+
+interface Props {
+	title?: string;
+  description?: string;
+}
+
+const { 
+  title = "LUMIÈRE Spa | Exclusive Care for Ladies",
+  description = "專為亞洲女性量身打造的極致美胸工藝。透過深層經絡與法式芳療，重塑自信曲線。" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

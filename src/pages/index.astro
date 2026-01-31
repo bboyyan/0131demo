@@ -1,0 +1,38 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation";
+import HeroSection from "../components/HeroSection";
+import Philosophy from "../components/Philosophy";
+import Treatment from "../components/Treatment";
+import ImpactMetrics from "../components/ImpactMetrics";
+import FinalCTA from "../components/FinalCTA";
+import Footer from "../components/Footer";
+import MobileFAB from "../components/MobileFAB";
+---
+
+<Layout>
+	<main
+		class="min-h-screen bg-sand p-0 md:p-8 flex items-center justify-center font-sans"
+	>
+		<!-- Main Page Container: Replicates the mock-up's card-like structure on desktop -->
+		<div
+			class="w-full max-w-[1400px] bg-card md:rounded-[40px] shadow-none md:shadow-2xl overflow-hidden relative mx-auto transition-all duration-500"
+		>
+			<Navigation client:load />
+
+			<HeroSection client:load />
+
+			<Philosophy client:visible />
+
+			<Treatment client:visible />
+
+			<ImpactMetrics client:visible />
+
+			<FinalCTA client:visible />
+
+			<Footer />
+
+			<MobileFAB client:load />
+		</div>
+	</main>
+</Layout>

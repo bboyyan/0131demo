@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-playfair: "Playfair Display", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  
+  /* Colors */
+  --color-sand: #F2F0EB;
+  --color-card: #FAFAFA;
+  
+  /* Animations */
+  --animate-fade-in: fade-in 1s ease-out forwards;
+  --animate-slide-up: slide-up 1s ease-out forwards;
+  --animate-pulse-slow: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @keyframes slide-up {
+    0% { 
+      opacity: 0; 
+      transform: translateY(30px);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .7; }
+  }
+}
+
+/* Base Styles */
+@layer base {
+  html, body {
+    @apply bg-sand text-neutral-800 antialiased;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+}
